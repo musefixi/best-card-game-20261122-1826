@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ember Tide — a duel of tides and embers</title>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<div id="table" aria-label="Ember Tide card table">
+  <header id="scorebar">
+    <div class="side" id="foe-side">
+      <span class="name">Riva, the Tide-Keeper</span>
+      <span class="tide" id="foe-tide" title="Riva's tide points"></span>
+      <span class="tricks">Tricks <b id="foe-tricks">0</b></span>
+    </div>
+    <div id="round-info">
+      <span id="round-label">Round 1</span>
+      <span id="deck-count">Deck 28</span>
+    </div>
+    <div class="side" id="you-side">
+      <span class="name">You</span>
+      <span class="tide" id="you-tide" title="Your tide points"></span>
+      <span class="tricks">Tricks <b id="you-tricks">0</b></span>
+    </div>
+  </header>
+
+  <section id="foe-hand" aria-label="Riva's hand"></section>
+
+  <section id="arena">
+    <div id="foe-played" class="played-slot" aria-label="Riva's played card"></div>
+    <div id="arena-mid">
+      <div id="message" role="status">Welcome to Ember Tide.</div>
+      <div id="trump-wheel" aria-label="Suit trump cycle"></div>
+      <button id="next-btn" type="button" hidden>Next trick</button>
+    </div>
+    <div id="you-played" class="played-slot" aria-label="Your played card"></div>
+  </section>
+
+  <section id="you-hand" aria-label="Your hand"></section>
+
+  <footer id="helpbar">
+    <span id="help-text">Click a card to play it. Higher value wins the trick — unless a suit trumps it. First to 7 tricks, or sink the other side to 0 tide, wins.</span>
+    <span id="keys">Keys: 1–7 play a card · N next trick · R restart · H help</span>
+    <button id="restart-btn" type="button">Restart</button>
+  </footer>
+
+  <div id="overlay" hidden>
+    <div id="overlay-card">
+      <h1 id="overlay-title">Ember Tide</h1>
+      <p id="overlay-sub">A duel of tides and embers.</p>
+      <div id="overlay-body"></div>
+      <button id="overlay-btn" type="button">Begin the duel</button>
+    </div>
+  </div>
+</div>
+<p id="status" role="status" aria-live="polite"></p>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
